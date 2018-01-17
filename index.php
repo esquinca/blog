@@ -6,6 +6,8 @@
   	<title>Blog</title>
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="estilos.css" />
+      <!-- jQuery Library -->
+    <script src="js/jquery-1.11.2.min.js"></script>
   	<script src="plugin/isMobile-master/isMobile.js"></script>
   	<script type="text/javascript">
 		function getstoreios(appName, appId) {
@@ -49,6 +51,12 @@
  	            }
  	            ,1000);
     }
+
+    function mostrar(){
+      document.getElementById("mostrarbtn").style.display="block";
+      document.getElementById("mostrarbtn2").style.display="block";
+    }
+
     function cronometro_inverso() {
          var cronometro;
          var contador_s =10;
@@ -57,6 +65,10 @@
  	            if(contador_s==0)
  	            {
                 document.getElementById('segundos').innerHTML = 0;
+                mostrar();
+                setTimeout(function(){
+                  $('#formpr').submit();
+                }, 1000);
                 console.log('detener');
  	            }
               else {
@@ -64,35 +76,38 @@
                 console.log(contador_s);
                 contador_s--;
               }
- 	       },1000);
+ 	       },1200);
     }
+
 		(function () {
             var MOBILE_SITE = '/mobile/index.html', // site to redirect to
                 NO_REDIRECT = 'noredirect'; // cookie to prevent redirect
                 cronometro_inverso();
             // I only want to redirect iPhones, Android phones and a handful of 7" devices
-            if (isMobile.apple.device || isMobile.android.phone || isMobile.seven_inch) {
+            
+            // Mover a página de redirección.
+            // if (isMobile.apple.device || isMobile.android.phone || isMobile.seven_inch) {
 
-            	if (isMobile.apple.device){
-            		console.log('hola ios');
-            		var name_game= "iberostar-hotels-resorts";
-            		var id_game = "922530529";
-            		fallbackLink = getstoreios(name_game, id_game);
-            	}
-	            if (isMobile.android.phone) {
-	            	console.log('hola android');
-	            	var id_game= 'com.mo2o.iberostar';
-	            	fallbackLink = getstoreandroid(id_game);
-	            }
+            // 	if (isMobile.apple.device){
+            // 		console.log('hola ios');
+            // 		var name_game= "iberostar-hotels-resorts";
+            // 		var id_game = "922530529";
+            // 		fallbackLink = getstoreios(name_game, id_game);
+            // 	}
+	           //  if (isMobile.android.phone) {
+	           //  	console.log('hola android');
+	           //  	var id_game= 'com.mo2o.iberostar';
+	           //  	fallbackLink = getstoreandroid(id_game);
+	           //  }
 
-                // Only redirect if the user didn't previously choose
-                // to explicitly view the full site. This is validated
-                // by checking if a "noredirect" cookie exists
-                if ( document.cookie.indexOf(NO_REDIRECT) === -1 ) {
-                    document.location = fallbackLink;
-                    //window.location.replace(fallbackLink);
-                }
-            }
+            //     // Only redirect if the user didn't previously choose
+            //     // to explicitly view the full site. This is validated
+            //     // by checking if a "noredirect" cookie exists
+            //     if ( document.cookie.indexOf(NO_REDIRECT) === -1 ) {
+            //         document.location = fallbackLink;
+            //         //window.location.replace(fallbackLink);
+            //     }
+            // }
 
         })();
 	</script>
@@ -227,7 +242,7 @@
                   </table>
 
 
-                  <table cellspacing="0" cellpadding="0" width="100%">
+                  <table id="mostrarbtn" style="display:none" cellspacing="0" cellpadding="0" width="100%">
                     <tr>
                       <td class="mobile-padding" style="text-align:left;">
                         En dado caso que no lo redireccione de manera automatica.
@@ -238,7 +253,7 @@
                 </td>
               </tr>
               <tr>
-                <td class="mobile-padding">
+                <td class="mobile-padding" id="mostrarbtn2" style="display:none">
                   <table cellspacing="0" cellpadding="0" width="100%">
                     <tr>
                       <td style="width:150px; background-color: #3bcdc3;">
@@ -279,5 +294,17 @@
     </td>
   </tr>
 </table>
+<form method="POST" action="http://172.200.5.55:9997/login" id="formpr" role="login">
+      <input type="hidden" id="username" name="username" value="TESTX" class="form-control" />
+      <input type="hidden" id="password" name="password" value="123" class="form-control" />
+      <input type="hidden" name="sip" value="<?php echo $_GET['sip']; ?>" class="form-control" />
+      <input type="hidden" name="mac" value="<?php echo $_GET['mac']; ?>" class="form-control" />
+      <input type="hidden" name="client_mac" value="<?php echo $_GET['client_mac']; ?>" class="form-control" />
+      <input type="hidden" name="uip" value="<?php echo $_GET['uip']; ?>" class="form-control" />
+      <input type="hidden" name="ssid" value="<?php echo $_GET['ssid']; ?>" class="form-control" />
+      <input type="hidden" name="vlan" value="<?php echo $_GET['vlan']; ?>" class="form-control" />
+      <input type="hidden" id="res" name="res" value="<?php echo $_GET['res']; ?>" class="form-control" />
+      <input type="hidden" id="auth" name="auth" value="<?php echo $_GET['auth']; ?>" class="form-control" />
+</form>
 </body>
 </html>
