@@ -25,7 +25,7 @@
             var MOBILE_SITE = '/mobile/index.html', // site to redirect to
                 NO_REDIRECT = 'noredirect'; // cookie to prevent redirect
             // I only want to redirect iPhones, Android phones and a handful of 7" devices
-            
+
             // Mover a página de redirección.
             if (isMobile.apple.device || isMobile.android.phone || isMobile.seven_inch) {
 
@@ -127,7 +127,7 @@
                   <td valign="middle" style="vertical-align:middle; padding-right: 15px; padding-left: 15px; text-align:left;" class="mobile-center" height="200">
 
                     <!--<h1 style="color: #3bcdc3">BIENVENIDO!</h1><br>-->
-                    <h4>Ya cuentas con acceso a internet.</h4>
+                    <!-- <h4>Ya cuentas con acceso a internet.</h4> -->
                   </td>
                 </tr>
               </table>
@@ -151,7 +151,8 @@
                     <tr>
                       <td style="text-align: center;">
                         <!--<h3>Descarga Nuestra App en!</h3>-->
-                        <h3>DESCARGA NUESTRA APP!</h3>
+												<h3>Ya cuentas con acceso a internet.</h3>
+                        <h4>DESCARGA NUESTRA APP!</h4>
                         <br>
                       </td>
                     </tr>
