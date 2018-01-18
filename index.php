@@ -221,8 +221,8 @@
                     <table cellspacing="0" cellpadding="0" width="500" class="w320">
 		              <tr>
 		                <td valign="top" style="padding:0px 0; text-align:center;" class="mobile-center">
-		                  <img width="150" height="62" src="img/app-android.svg">
-		                  <img width="150" height="62" src="img/app-ios.svg">
+                      <a href="https://play.google.com/store/apps/details?id=com.mo2o.iberostar&hl=en"><img width="150" height="62" src="img/app-android.svg"></a>
+                      <a href="https://itunes.apple.com/mx/app/iberostar-hotels-resorts/id922530529?l=en&mt=8"><img width="150" height="62" src="img/app-ios.svg"></a>
 		                </td>
 		              </tr>
 		            </table>
