@@ -1,8 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <head>
   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  	
   	<title>Blog</title>
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="estilos.css" />
@@ -59,7 +60,7 @@
     
     function cronometro_inverso() {
          var cronometro;
-         var contador_s =10;
+         var contador_s =5;
          cronometro = setInterval(
  	       function(){
  	            if(contador_s==0)
@@ -76,7 +77,11 @@
                 console.log(contador_s);
                 contador_s--;
               }
- 	       },1200);
+ 	       },1000);
+    }
+
+    function btnredirpush() {
+        $('#formpr').submit();
     }
 
 		(function () {
@@ -148,12 +153,13 @@
       td[class="mobile-padding"] {
         padding-left: 20px !important;
         padding-right: 20px !important;
-        padding-bottom: 20px !important;
+        padding-bottom: 10px !important;
       }
     }
   </style>
 </head>
 <body class="body" style="padding:0; margin:0; display:block; background:#ffffff; -webkit-text-size-adjust:none" bgcolor="#ffffff">
+
 <table align="center" cellpadding="0" cellspacing="0" width="100%" height="100%" >
   <tr>
     <td align="center" valign="top" bgcolor="#ffffff"  width="100%">
@@ -212,19 +218,19 @@
                         <!--<h3>Descarga Nuestra App en!</h3>-->
                         <h3>Bienvenido a Iberostar!</h3>
                         <h4>DESCARGA NUESTRA APP!</h4>
-                        <br>
+                        
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding:0px 0; text-align:center;" class="mobile-center">
+                        <a href="https://play.google.com/store/apps/details?id=com.mo2o.iberostar&hl=en"><img width="150" height="50" src="img/app-android.svg"></a>
+                        <a href="https://itunes.apple.com/mx/app/iberostar-hotels-resorts/id922530529?l=en&mt=8"><img width="150" height="50" src="img/app-ios.svg"></a>
                       </td>
                     </tr>
                   </table>
 
                   <center>
                     <table cellspacing="0" cellpadding="0" width="500" class="w320">
-		              <tr>
-		                <td valign="top" style="padding:0px 0; text-align:center;" class="mobile-center">
-                      <a href="https://play.google.com/store/apps/details?id=com.mo2o.iberostar&hl=en"><img width="150" height="62" src="img/app-android.svg"></a>
-                      <a href="https://itunes.apple.com/mx/app/iberostar-hotels-resorts/id922530529?l=en&mt=8"><img width="150" height="62" src="img/app-ios.svg"></a>
-		                </td>
-		              </tr>
 		            </table>
                   </center>
                 </td>
@@ -264,7 +270,7 @@
                               <center style="color:#ffffff;font-family:sans-serif;font-size:13px;">Come back!</center>
                             </v:roundrect>
                           <![endif]-->
-                          <!--[if !mso]><!-- --><a href="#"><table cellspacing="0" cellpadding="0" width="100%"><tr><td style="background-color:#3bcdc3;border-radius:0px;color:#ffffff;display:inline-block;font-family:'Lato', Helvetica, Arial, sans-serif;font-weight:bold;font-size:13px;line-height:33px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;"><span style="color:#ffffff">Click Continuar!</span></td></tr></table></a>
+                          <!--[if !mso]><!-- --><a href="#" id="btnredir" onClick="btnredirpush();"><table cellspacing="0" cellpadding="0" width="100%"><tr><td style="background-color:#3bcdc3;border-radius:0px;color:#ffffff;display:inline-block;font-family:'Lato', Helvetica, Arial, sans-serif;font-weight:bold;font-size:13px;line-height:33px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;"><span style="color:#ffffff">Click Continuar!</span></td></tr></table></a>
                           <!--<![endif]-->
                         </div>
                       </td>
